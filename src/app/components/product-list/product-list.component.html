@@ -1,21 +1,12 @@
-<table class="table table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Units in stock</th>
-    </tr>
-  </thead>
+<div class="main-content">
+  <div class="section-content section-content-p30">
 
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td class="align-middle">
-        <img src="{{product.imageUrl}}" alt="Product Image" height="75">
-      </td>
-      <td class="align-middle">{{product.name}}</td>
-      <td class="align-middle">{{product.unitPrice | currency:'USD'}}</td>
-      <td class="align-middle">{{product.unitsInStock}}</td>
-    </tr>
-  </tbody>
-</table>
+        <div *ngFor="let product of products" class="product-box">
+            <img src="{{product.imageUrl}}" class="img-fluid">
+            <h1>{{product.name}}</h1>
+            <div class="price">{{product.unitPrice | currency:"USD"}}</div>
+            <a href="#" class="primary-btn">Buy now</a>
+        </div>
+
+  </div>
+</div>
