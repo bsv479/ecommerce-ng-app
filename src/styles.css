@@ -206,6 +206,7 @@ section{
 .section-content{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   position:relative;
   margin:0 auto;
   z-index:1
@@ -526,8 +527,8 @@ input.au-input.au-input-xl{
  * ----------------------------
  */
 
-.product-box img {
-  width: 200px;
+.product-img-box {
+  height: 450px;
 }
 
 .items select {
@@ -549,6 +550,7 @@ input.au-input.au-input-xl{
   align-items: center;
   margin-bottom:60px;
 }
+
 .price{
   margin:15px 0 0;
   font-weight:800;
