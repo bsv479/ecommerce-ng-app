@@ -2,10 +2,12 @@
   <div class="section-content section-content-p30">
 
     <div *ngFor="let product of products" class="product-box">
-      <div class="product-img-box">
+      <a routerLink="/products/{{product.id}}" class="product-img-box">
         <img src="{{product.imageUrl}}" class="product-img" alt="{{product.name}} image">
-      </div>
-      <h1>{{product.name}}</h1>
+      </a>
+      <a routerLink="/products/{{product.id}}">
+        <h1>{{product.name}}</h1>
+      </a>
       <div class="price">{{product.unitPrice | currency:"USD"}}</div>
       <a href="#" class="primary-btn">Buy now</a>
     </div>

@@ -1,4 +1,5 @@
 export class Product {
+  id: number;
   ski: string | undefined;
   name: string | undefined;
   description: string | undefined;
