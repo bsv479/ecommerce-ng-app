@@ -17,6 +17,16 @@
          role="alert">
       No products found.
     </div>
-
   </div>
+  <div class="footer-pagination">
+    <ngb-pagination class="d-flex justify-content-center mt-5"
+                    [(page)]="theCurrentPageNumber"
+                    [pageSize]="thePageSize"
+                    [collectionSize]="theTotalElements"
+                    (pageChange)="listProducts()"
+                    aria-label="Default pagination"
+    >
+    </ngb-pagination>
+  </div>
+
 </div>
