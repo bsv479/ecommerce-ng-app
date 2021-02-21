@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
 
   // properties for pagination
   theCurrentPageNumber = 1;
-  thePageSize = 9;
+  thePageSize = 6;
   theTotalElements = 0;
 
   constructor(private productService: ProductService,
@@ -81,5 +81,12 @@ export class ProductListComponent implements OnInit {
       this.theTotalElements = date.page.totalElements;
       this.theCurrentPageNumber = date.page.number + 1;
     };
+  }
+
+  // tslint:disable-next-line:ban-types
+  updatePageSize(size: number): void {
+    this.thePageSize = size;
+    this.theCurrentPageNumber = 1;
+    this.listProducts();
   }
 }

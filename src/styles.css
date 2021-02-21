@@ -779,10 +779,11 @@ a.primary-btn:hover{
  * ----------------------------
  */
 
-.footer-pagination{
-  text-align:center
-}
 
+
+ngb-pagination ul {
+  margin-bottom: 0;
+}
 footer ul li a{
   color:#fff
 }

@@ -18,15 +18,36 @@
       No products found.
     </div>
   </div>
-  <div class="footer-pagination">
-    <ngb-pagination class="d-flex justify-content-center mt-5"
-                    [(page)]="theCurrentPageNumber"
-                    [pageSize]="thePageSize"
-                    [collectionSize]="theTotalElements"
-                    (pageChange)="listProducts()"
-                    aria-label="Default pagination"
-    >
-    </ngb-pagination>
-  </div>
 
+  <!--  FOOTER PAGINATION-->
+
+  <div class="footer-pagination my-2">
+    <div class="row align-items-center">
+
+      <div class="col-md-3"></div>
+
+      <div class="col-md-6 justify-content-center">
+        <ngb-pagination class="d-flex justify-content-center"
+                        [(page)]="theCurrentPageNumber"
+                        [pageSize]="thePageSize"
+                        [collectionSize]="theTotalElements"
+                        (pageChange)="listProducts()"
+                        [maxSize]="5"
+        >
+        </ngb-pagination>
+      </div>
+
+<!--  SIZE CHANGER-->
+      <div class="my-3 col-md-3 text-center">
+        <label for="size" class="mr-2 mb-0">Page size: </label>
+        <select #sizeOfPage (change)="updatePageSize(+sizeOfPage.value)"
+                id="size">
+          <option value="6" selected>6</option>
+          <option value="9">9</option>
+          <option value="15">15</option>
+          <option value="18">18</option>
+        </select>
+      </div>
+    </div>
+  </div>
 </div>
