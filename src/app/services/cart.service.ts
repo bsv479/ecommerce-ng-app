@@ -36,7 +36,7 @@ export class CartService {
   }
 
 
-  private computeCartTotals(): void {
+  computeCartTotals(): void {
     let totalPriceValue = 0;
     let totalQuantityValue = 0;
 
