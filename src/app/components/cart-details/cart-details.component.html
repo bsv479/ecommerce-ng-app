@@ -8,17 +8,31 @@
         <th width="50%">Product Detail</th>
         <th width="30%">Shop Info</th>
       </tr>
-      <tr *ngFor="let cartItem of cartItems">
+
+      <tr *ngFor="let cartItem of cartItems" class="text-center">
         <td>
-          <img src="{{cartItem.imageUrl}}" alt="Image photo">
+          <a routerLink="/products/{{cartItem.id}}">
+            <img src="{{cartItem.imageUrl}}" alt="Image photo">
+          </a>
         </td>
         <td>
           <p>{{cartItem.name}}</p>
           <p>{{cartItem.unitPrice | currency:'USD'}}</p>
         </td>
         <td>
-          <p>Quantity: {{cartItem.quantity}}</p>
-          <p>Subtotal: {{cartItem.quantity * cartItem.unitPrice | currency:'USD'}}</p>
+          <div class="d-flex flex-column align-content-around">
+            <div class="quantity-details d-flex justify-content-around">
+              <button (click)="decreaseQuantity(cartItem)" class="btn btn-primary btn-sm">
+                <i class="fas fa-minus"></i>
+              </button>
+              <p>Quantity: {{cartItem.quantity}}</p>
+              <button (click)="incrementQuantity(cartItem)" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+            <button (click)="deleteCartItem(cartItem)" class="btn btn-primary btn-sm mt-3">Remove</button>
+            <p style="margin-top: 20px">Subtotal: {{cartItem.quantity * cartItem.unitPrice | currency:'USD'}}</p>
         </td>
       </tr>
       <tr>
@@ -28,6 +42,7 @@
           <p>Total Quantity: {{totalQuantity}}</p>
           <p>Total Price: {{totalPrice | currency:'USD'}}</p>
           <p>Shipping: FREE</p>
+          <button routerLink="/checkout" class="btn btn-primary">Checkout</button>
         </td>
       </tr>
     </table>
